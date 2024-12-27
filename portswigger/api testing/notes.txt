@@ -1,0 +1,31 @@
+api testing is:
+api recon
+paramater acceptance and supported content type of api
+http method acceptance
+rate limit and authentications
+
+
+api recon:
+chcek the root link
+investigate js files for endpoints
+
+for machine readalble docs Postman or SoapUI
+
+
+You can use the built-in HTTP verbs list in Burp Intruder to automatically cycle through a range of methods
+
+mass assignment??
+
+PHP parses the last parameter only. This would result in a user search for carlos.
+ASP.NET combines both parameters. This would result in a user search for peter,carlos, which might result in an Invalid username error message.
+Node.js / express parses the first parameter only. This would result in a user search for peter, giving an unchanged result.
+
+
+practice:
+change get requests to Patch
+always check the /api path
+
+api docs are in these paths:
+/api
+/swagger/index.html
+/openapi.json

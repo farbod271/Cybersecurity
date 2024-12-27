@@ -1,0 +1,20 @@
+Use an alternative IP representation of 127.0.0.1, such as 2130706433, 017700000001, or 127.1.
+Register your own domain name that resolves to 127.0.0.1. You can use spoofed.burpcollaborator.net for this purpose.
+Obfuscate blocked strings using URL encoding or case variation.
+Provide a URL that you control, which redirects to the target URL. Try using different redirect codes, as well as different protocols for the target URL. For example, switching from an http: to https: URL during the redirect has been shown to bypass some anti-SSRF filters.
+
+you can use ope redirect to SSRF
+
+lesson:
+if url has basic auth enabled look for ssrf and whitelist bypass. cause you can do 
+http://localhost%2523@stock.weliketoshop.net/admin/delete?username=carlos
+# is double url encoded
+
+how ssrf with openredirect works:
+you find an openredirect. if that path is in a url that the server send requests you can use that open redirect to.
+stockApi=/product/nextProduct?currentProductId=1&path=http://192.168.0.12:8080/admin/delete?username%3dcarlos.
+frontend did this:
+/product/nextProduct?currentProductId=2&path=/product?productId=3
+
+how to transfer info in nslookup?
+you add the data as a subdomain to nslook up your server!!!!!

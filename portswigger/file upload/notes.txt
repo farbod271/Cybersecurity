@@ -1,0 +1,9 @@
+
+
+Web servers often use the filename field in multipart/form-data requests to determine the name and location where the file should be saved.
+
+some bypasses include:
+just upload it in another directory
+upload a .htaccess to that directory and whitelist txt:
+	AddType application/x-httpd-php .txt
+

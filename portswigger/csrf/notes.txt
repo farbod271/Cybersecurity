@@ -1,0 +1,16 @@
+just omit the thing that is being checked and maybe it works? omit key and value completely
+
+review what same site ans same origin mean
+
+The two-minute window does not apply to cookies that were explicitly set with the SameSite=Lax attribute.
+
+eTLD is when you have two top level domains like co.uk wven tho its a subdomain actually
+
+same origin also adds port and sub to same site
+
+amazing: cookie injection through %0d%0a
+
+so open resirects are great for csrf
+and you have to look for the js file that is handling it. its not induced in burp
+
+sometimes if you omit the referer header altogether you can bypass csrf

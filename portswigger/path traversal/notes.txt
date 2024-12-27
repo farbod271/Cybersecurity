@@ -1,0 +1,11 @@
+goal is etc/passwd
+in windows its windows\win.ini
+
+the input can be stripped from the inner side bypass is ....//
+ another bypass is url or double url encoding the trabersal like this:  %2e%2e%2f = ../
+
+simetimes the app checks if base directory that is provided is expected
+
+sometimes it looks if the url has the extension of the file: terminate using null byte filename=../../../etc/passwd%00.png
+
+that was it!

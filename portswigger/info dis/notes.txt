@@ -1,0 +1,16 @@
+add the TRACE http method for recieving dignostic rsponses
+
+info dis vuns are exposed  ny fuzzing parameters a dnsending unexpected input
+send string instead of int to cause error
+/sitemap.xml and robots.txt
+revealing source code through changing file extensions and ~ thingy
+/.git directory
+hidden directories. a cool one for php is cgi-bin/phpinfo.php
+
+the engament tools in burp are usefull as well
+
+in a lab the http method head revealed that its using this header: X-Custom-Ip-Authorization: 127.0.0.1 and by changing the ip to a local ip we could access the admin panel
+
+match and replace burp is awesome. you can just use replace to send custom headers in browser
+
+git diff hash

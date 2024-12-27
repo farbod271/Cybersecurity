@@ -1,0 +1,13 @@
+in the impact section it discusses that if you can authenticate  you can explore more attach surface
+in redbull for example if you can bypass and auth you can explore the attach surface behin the auth page
+
+you can use brute force attacks more smart and take into accound human factor
+
+small typing errors sometimes creep in. Just one character out of place makes the two messages distinct, even in cases where the character is not visible on the rendered page.
+response time in user enumeration can be used
+
+In this case, merely including your own login credentials at regular intervals throughout the wordlist is enough to render this defense virtually useless.
+
+http basic auth: Authorization: Basic base64(username:password)
+
+for ip based blocking you can screw with the X-Forwarded-For header

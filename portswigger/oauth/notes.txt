@@ -1,0 +1,15 @@
+what is an oaucth grant? the way the client requests auth token 
+
+
+understand strucure of the app
+research misconf from the docs
+
+
+there is alot to cover:
+chaining vuns is important in leaking auth tokens
+
+you can send the url of a page with html injection cause firefox sends url in referer header
+
+standard 0auth service provider endpoints:
+/.well-known/openid-configuration
+/.well-known/oauth-authorization-server

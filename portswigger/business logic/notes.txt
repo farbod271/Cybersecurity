@@ -1,0 +1,7 @@
+what? also called logic flaws, screwing around with the app to find unpredicted states
+data flow and mistakes about assumptions that the other components from other teams have validated  an input can lead to logic flaws.
+
+that low level logic flaw integer overflow for purchases was amazing
+nearly all examoles are overflow of varibles
+choose long names see if it gets cut
+pay attention to session changes and intermediary sessions thta have previlages but are rewritten by requests

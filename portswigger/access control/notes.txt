@@ -1,0 +1,13 @@
+ok so one thing i learned is that while email change you can basically also give you role previlage and change it
+
+in a get request put the freaking parameters up in the url section
+
+whenn you forward a req it redirects automatically and dosent hold. you have to manualy repeat every req
+
+there a couple of ways the webite check access control. idealy it should check the session cookie and look internal acess controls
+
+but there are referer based vuns
+multi step vuns
+!important: sometimes its protected against a method like post but not othres!!
+
+X-Original-URL is also interesting. Change the URL in the request line to / and add the HTTP header X-Original-URL: /invalid. Observe that the application returns a "not found" response. This indicates that the back-end system is processing the URL from the X-Original-URL header.

